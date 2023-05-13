@@ -41,7 +41,7 @@ pub fn draw(rl: &mut RaylibHandle, thread: &RaylibThread, font: &Font, sizex: &i
         d.gui_set_font(font);
         d.draw_text(&format!("N: {}", man.n.0), 10, 0, 50, Color::WHITE);
         man = man.update(&mut d, &mut subs);
-        d.draw_rectangle_lines_ex(Rectangle::new((sizex - 220) as f32, 10.0, 200.0, 50.0), 5.0, Color::BLACK);
+        d.draw_rectangle_lines_ex(Rectangle::new((sizex - 220) as f32, 10.0, 200.0, 50.0), 5, Color::BLACK);
         d.draw_rectangle_rec(Rectangle::new((sizex - 215) as f32, 15.0, 190.0 * man.hp, 40.0), Color::LIME);
         subs.update(man.pos, d.get_time(),&mut d, &sizex, &sizey);
     }

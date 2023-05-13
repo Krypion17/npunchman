@@ -1,6 +1,6 @@
 use raylib::prelude::*;
 use super::sub::SubSpawn;
-//use raylib::misc::get_random_value;
+use raylib::misc::get_random_value;
 
 pub struct Man {
     pub pos: Vector2,
@@ -27,7 +27,7 @@ impl Man {
 
     fn control(&mut self, d: &RaylibDrawHandle, subs: &mut SubSpawn) {
         let a = 9.0;
-        if d.is_mouse_button_pressed(MouseButton::MOUSE_BUTTON_LEFT) {
+        if d.is_mouse_button_pressed(MouseButton::MOUSE_LEFT_BUTTON) {
             self.vel = -(self.pos - d.get_mouse_position()).normalized() * a;
             self.punch = !self.punch;
             for i in &mut subs.subs {

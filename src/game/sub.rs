@@ -1,5 +1,5 @@
 use raylib::prelude::*;
-// use raylib::misc::get_random_value;
+use raylib::misc::get_random_value;
 
 pub struct Sub<'a> {
     pub pos: Vector2,
